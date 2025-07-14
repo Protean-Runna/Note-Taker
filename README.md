@@ -1,0 +1,7 @@
+<h2>A simple Note Taker and Tracker</h2>
+What it says on the tin. This is a simple note taker app developed to practice with useState in React.js, as well also figuring out local storage.
+
+<h2>Functions</h2>
+1.Notes can be created and can be stored locally in your browser.
+2.Notes can be edited or deleted if desired.
+

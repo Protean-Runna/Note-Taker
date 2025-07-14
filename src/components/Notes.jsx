@@ -12,7 +12,8 @@ export default function NoteMaker() {
   const [newTitle, setNewTitle] = useState('');
   const [newNote, setNewNote] = useState('');
   const [editingNote, setEditingNote] = useState(null);
-  const NoteCharLimit = 260; //
+  const NoteCharLimit = 260;
+  const NoteTitleLimit = 60;
 
   // Persist notes to localStorage whenever they change
   useEffect(() => {
@@ -80,7 +81,7 @@ export default function NoteMaker() {
           type="text"
           placeholder="Title..."
           value={newTitle}
-          maxLength="60"
+          maxLength={NoteTitleLimit}
           onChange={(e) => setNewTitle(e.target.value)}
         />
         <textarea
@@ -108,7 +109,7 @@ export default function NoteMaker() {
                     onChange={(e) =>
                       setEditingNote(prev => ({ ...prev, title: e.target.value }))
                     }
-                    maxLength="60"
+                    maxLength={NoteTitleLimit}
                     placeholder="Edit title..."
                   />
                   <textarea

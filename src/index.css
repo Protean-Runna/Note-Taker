@@ -1,198 +1,185 @@
 :root {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    
-    background-repeat: no-repeat;
-    color: light-dark(black, rgb(246, 251, 255));
-    text-shadow: 1px 1px 5px light-dark(white, rgba(20, 19, 19, 0.747));
-    background-position: center;
-    background-attachment: fixed;
-    background-size: cover;
-    font-synthesis: none;
-    outline: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color-scheme: light dark;
-    background-color: light-dark(white,rgb(19, 18, 20) );
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+
+  background-repeat: no-repeat;
+  color: light-dark(black, rgb(246, 251, 255));
+  text-shadow: 1px 1px 5px light-dark(white, rgba(20, 19, 19, 0.747));
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  font-synthesis: none;
+  outline: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color-scheme: light dark;
+  background-color: light-dark(white, rgb(19, 18, 20));
 }
 
+.note-create {
+  position: relative;
 
-
-.note-create{
-    position: relative;
-    
-    background-color: light-dark( rgb(228, 228, 228), rgb(10, 9, 10));
-    width: 500px;
-    margin: 30px auto 20px auto;
-    padding: 20px;
-    border: 1.5px solid light-dark(rgb(228, 228, 228), white);
-    border-radius: 5px;
-    backdrop-filter: blur(7px);
-    transition: 0.25s ease;
-    box-shadow: 0px 1px 5px light-dark( rgba(0, 0, 0, 0.507), rgba(219, 219, 219, 0.295));
-    &:hover{
-        box-shadow: 0px 1px 5px light-dark( rgba(0, 0, 0, 0.74), rgba(219, 219, 219, 0.548));
-    }
-    &::placeholder{
-        color: rgba(255, 255, 255, 0.726);
-
-    }
-    
+  background-color: light-dark(rgb(228, 228, 228), rgb(10, 9, 10));
+  width: 500px;
+  margin: 30px auto 20px auto;
+  padding: 20px;
+  border: 1.5px solid light-dark(rgb(228, 228, 228), white);
+  border-radius: 5px;
+  backdrop-filter: blur(7px);
+  transition: 0.25s ease;
+  box-shadow: 0px 1px 5px
+    light-dark(rgba(0, 0, 0, 0.507), rgba(219, 219, 219, 0.295));
+  &:hover {
+    box-shadow: 0px 1px 5px
+      light-dark(rgba(0, 0, 0, 0.74), rgba(219, 219, 219, 0.548));
+  }
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.726);
+  }
 }
 
-.note-create input, .note-create textarea {
-    width: 100%;
-    background-color:transparent;
-    border: none;
-    
-    
-    padding: 4px;
-    
-    color: light-dark( black rgb(255, 255, 255));
-    text-shadow: light-dark(none, 1px 1px 4px rgba(12, 12, 12, 0.685));
-    
-    resize: none;
-    font-size: 1.2rem;
-    &:focus{
-        background-color: light-dark(rgb(214, 214, 214), rgb(15, 14, 15));
-    }
-    
-            
+.note-create input,
+.note-create textarea {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+
+  padding: 4px;
+
+  color: light-dark(black rgb(255, 255, 255));
+  text-shadow: light-dark(none, 1px 1px 4px rgba(12, 12, 12, 0.685));
+
+  resize: none;
+  font-size: 1.2rem;
+  &:focus {
+    background-color: light-dark(rgb(214, 214, 214), rgb(15, 14, 15));
+  }
 }
 
-.note-create input{
-    border: none;
-    border-bottom: 1px solid light-dark(black, rgb(255, 255, 255));
-    margin-top: 10px;
-    outline: none;  
-    border-top-right-radius: 4px;
-    border-top-left-radius: 4px;
+.note-create input {
+  border: none;
+  border-bottom: 1px solid light-dark(black, rgb(255, 255, 255));
+  margin-top: 10px;
+  outline: none;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
 }
 .note-create textarea {
   margin-top: 0px;
   border-top: 0.5px solid rgba(116, 116, 116, 0.322);
-  
+
   height: 150px;
   transition: 0.2s ease;
   outline: none;
   border-bottom-right-radius: 4px;
-  border-bottom-left-radius: 4px;  
-  
+  border-bottom-left-radius: 4px;
 }
 
 .noteCardStyle {
-    border-radius: 4px;
-    padding: 1rem;
-    background-color: light-dark( rgb(228, 228, 228), rgb(10, 9, 10)); 
-    text-shadow: light-dark(none, 1px 1px 5px rgba(12, 12, 12, 0.685));
-    box-Shadow: 1px 2px 5px rgba(0, 0, 0, 0.45);
-    min-height: 170px;
+  border-radius: 4px;
+  padding: 1rem;
+  background-color: light-dark(rgb(228, 228, 228), rgb(10, 9, 10));
+  text-shadow: light-dark(none, 1px 1px 5px rgba(12, 12, 12, 0.685));
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.45);
+  min-height: 170px;
+  margin-bottom: 10px;
+  transition: 0.25s ease;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  &:hover {
+    background-color: light-dark(rgb(228, 228, 228), rgb(12, 10, 12));
+    box-shadow: 1px 2px 5px
+      light-dark(rgba(0, 0, 0, 0.678), rgba(0, 0, 0, 0.45));
+  }
+
+  &.noteCardStyle input {
+    width: 98%;
+    padding: 4px;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    background-color: transparent;
+    border: 1px solid light-dark(black, white);
+    box-shadow: 0px 1px 5px rgba(99, 99, 99, 0.29);
+
+    font-size: 1.2em;
+    color: light-dark(black, whitesmoke);
+    border-bottom: none;
+  }
+
+  &.noteCardStyle textarea {
+    width: 98%;
+    min-height: 200px;
+    max-height: 300px;
+
+    background-color: transparent;
+    border: 1px solid light-dark(black, white);
+
+    box-shadow: 0px 1px 5px rgba(219, 219, 219, 0.295);
+    color: light-dark(black, whitesmoke);
+    font-size: 1.2em;
+    resize: none;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    padding: 4px;
     margin-bottom: 10px;
-    transition: 0.25s ease;
-    
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    &:hover{
-        background-color: light-dark( rgb(228, 228, 228), rgb(12, 10, 12));
-        box-Shadow: 1px 2px 5px light-dark(rgba(0, 0, 0, 0.678), rgba(0, 0, 0, 0.45));
-    }
-
-
-    &.noteCardStyle input{
-        width: 98%;
-        padding: 4px;
-        border-top-right-radius: 4px;
-        border-top-left-radius: 4px;
-        background-color: transparent;
-        border: 1px solid light-dark(black, white);
-        box-shadow: 0px 1px 5px rgba(99, 99, 99, 0.29);
-        
-        font-size: 1.2em;
-        color: light-dark(black, whitesmoke);
-        border-bottom: none;
-    }
-
-    &.noteCardStyle textarea{
-        width: 98%;
-        min-height: 200px;
-        max-height: 300px;
-        
-        background-color: transparent;
-        border: 1px solid light-dark(black, white);
-        
-        box-shadow: 0px 1px 5px rgba(219, 219, 219, 0.295);
-        color: light-dark(black, whitesmoke);
-        font-size: 1.2em;
-        resize: none;
-        border-bottom-right-radius: 4px;
-        border-bottom-left-radius: 4px;  
-        padding: 4px;
-        margin-bottom: 10px;
-    }
-    
-
+  }
 }
-.noteCardStyle p{
-    
-    font-size: 18px;
-    box-sizing:border-box;
-    text-align: center;
+.noteCardStyle p {
+  font-size: 18px;
+  box-sizing: border-box;
+  text-align: center;
 }
 
-
-.noteCardStyle textarea:focus, .noteCardStyle input:focus{
-    background-color: light-dark( transparent, rgb(15, 14, 15));
-    outline-style: hidden;
-    
-    
+.noteCardStyle textarea:focus,
+.noteCardStyle input:focus {
+  background-color: light-dark(transparent, rgb(15, 14, 15));
+  outline-style: hidden;
 }
 
-button{
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    background-color: light-dark(rgb(0, 89, 255), rgb(255, 81, 0));
-    color: rgb(255, 255, 255);
-    text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.377);
-    font-weight: bold;
-    cursor: pointer;
-    &:hover{
-        background-color: light-dark(rgb(0, 73, 207), rgb(218, 69, 0));
-    }
-    &:active{
-        background-color: light-dark(rgb(0, 62, 179), rgb(165, 52, 0));
-        scale: 0.90;
-    }
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  background-color: light-dark(rgb(0, 89, 255), rgb(255, 81, 0));
+  color: rgb(255, 255, 255);
+  text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.377);
+  font-weight: bold;
+  cursor: pointer;
+  &:hover {
+    background-color: light-dark(rgb(0, 73, 207), rgb(218, 69, 0));
+  }
+  &:active {
+    background-color: light-dark(rgb(0, 62, 179), rgb(165, 52, 0));
+    scale: 0.9;
+  }
 }
-.note-button{
-    display: flex;
-    align-items: center;
-    justify-content:center;
-}
-
-.iconButton{
-    
-    font-size: 30px;
-    padding: 5px 10px;
-    margin: 5px;
-    border-radius: 25px;
-    
-    &:hover{
-        background-color: light-dark(rgb(0, 73, 207), rgb(218, 69, 0));
-        
-    }
-    &:active{
-        background-color: light-dark(rgb(0, 62, 179), rgb(165, 52, 0));
-        
-    }
+.note-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.Header{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
+.iconButton {
+  font-size: 30px;
+  padding: 5px 10px;
+  margin: 5px;
+  border-radius: 25px;
 
+  &:hover {
+    background-color: light-dark(rgb(0, 73, 207), rgb(218, 69, 0));
+  }
+  &:active {
+    background-color: light-dark(rgb(0, 62, 179), rgb(165, 52, 0));
+  }
+}
+
+.Header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }

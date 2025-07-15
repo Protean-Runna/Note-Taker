@@ -1,61 +1,61 @@
-import React, { useState, useEffect } from 'react';
-import { MdDelete, MdOutlineEdit, MdOutlineEditOff, MdOutlineSaveAlt } from "react-icons/md";
-export default function NoteMaker() {
+import React, { useState, useEffect } from "react";
+import {
+  MdDelete,
+  MdOutlineEdit,
+  MdOutlineEditOff,
+  MdOutlineSaveAlt,
+} from "react-icons/md";
 
-  const [notes, setNotes] = useState(() =>{
-    const storedNotes = localStorage.getItem('react-notes-app-data');
+export default function NoteMaker() {
+  const [notes, setNotes] = useState(() => {
+    const storedNotes = localStorage.getItem("react-notes-app-data");
     return storedNotes ? JSON.parse(storedNotes) : [];
   });
 
-
-
-  const [newTitle, setNewTitle] = useState('');
-  const [newNote, setNewNote] = useState('');
+  const [newTitle, setNewTitle] = useState("");
+  const [newNote, setNewNote] = useState("");
   const [editingNote, setEditingNote] = useState(null);
   const NoteCharLimit = 260;
   const NoteTitleLimit = 60;
 
   // Persist notes to localStorage whenever they change
   useEffect(() => {
-    localStorage.setItem('react-notes-app-data', JSON.stringify(notes));
+    localStorage.setItem("react-notes-app-data", JSON.stringify(notes));
   }, [notes]);
-  
-  
-  // Style objects
-  const containerStyle = { 
-    paddingRight: '20px',
-    paddingLeft: '20px',
-    marginRight: 'auto',
-    marginLeft: 'auto',
-    maxWidth: '1400px'
 
-   };
-  const noteCreateStyle = { marginBottom: '2rem' };
-  const gridStyle = {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(min(350px,100%), 1fr)) ',
-    gap: '1rem',
-    
+  // Style objects
+  const containerStyle = {
+    paddingRight: "20px",
+    paddingLeft: "20px",
+    marginRight: "auto",
+    marginLeft: "auto",
+    maxWidth: "1400px",
   };
-  const addButtonStyle = {  marginLeft: '10px', marginTop: '10px' };
-  
+  const noteCreateStyle = { marginBottom: "2rem" };
+  const gridStyle = {
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit, minmax(min(350px,100%), 1fr)) ",
+    gap: "1rem",
+  };
+  const addButtonStyle = { marginLeft: "10px", marginTop: "10px" };
+
   // Adds a new note if there's content
   const addNote = () => {
     if (newNote.trim()) {
       const note = {
-        id: notes.length ? notes[notes.length -1].id +1 : 1,
+        id: notes.length ? notes[notes.length - 1].id + 1 : 1,
         title: newTitle,
         text: newNote,
       };
-      setNotes(prevNotes => [...prevNotes, note]);
-      setNewTitle('');
-      setNewNote('');
+      setNotes((prevNotes) => [...prevNotes, note]);
+      setNewTitle("");
+      setNewNote("");
     }
   };
 
   // Deletes a note by filtering it out of the notes list
   const deleteNote = (id) => {
-    setNotes(prevNotes => prevNotes.filter(note => note.id !== id));
+    setNotes((prevNotes) => prevNotes.filter((note) => note.id !== id));
   };
 
   // Starts editing by storing the selected note data
@@ -65,8 +65,8 @@ export default function NoteMaker() {
 
   // Saves the updated note
   const updateNote = (id) => {
-    setNotes(prevNotes =>
-      prevNotes.map(note => (note.id === id ? editingNote : note))
+    setNotes((prevNotes) =>
+      prevNotes.map((note) => (note.id === id ? editingNote : note))
     );
     setEditingNote(null);
   };
@@ -76,7 +76,7 @@ export default function NoteMaker() {
 
   return (
     <div style={containerStyle}>
-      <div className='note-create' style={noteCreateStyle}>
+      <div className="note-create" style={noteCreateStyle}>
         <input
           type="text"
           placeholder="Title..."
@@ -99,15 +99,18 @@ export default function NoteMaker() {
 
       {notes.length > 0 ? (
         <div style={gridStyle}>
-          {notes.map(note => (
-            <div className='noteCardStyle' key={note.id}>
+          {notes.map((note) => (
+            <div className="noteCardStyle" key={note.id}>
               {editingNote && editingNote.id === note.id ? (
                 <>
                   <input
                     type="text"
                     value={editingNote.title}
                     onChange={(e) =>
-                      setEditingNote(prev => ({ ...prev, title: e.target.value }))
+                      setEditingNote((prev) => ({
+                        ...prev,
+                        title: e.target.value,
+                      }))
                     }
                     maxLength={NoteTitleLimit}
                     placeholder="Edit title..."
@@ -115,42 +118,62 @@ export default function NoteMaker() {
                   <textarea
                     value={editingNote.text}
                     onChange={(e) =>
-                      setEditingNote(prev => ({ ...prev, text: e.target.value }))
+                      setEditingNote((prev) => ({
+                        ...prev,
+                        text: e.target.value,
+                      }))
                     }
                     maxLength={NoteCharLimit}
-                    
-                    
                     placeholder="Edit your content..."
                   />
-                  <p>Characters left: {NoteCharLimit - editingNote.text.length}</p>
-                  
+                  <p>
+                    Characters left: {NoteCharLimit - editingNote.text.length}
+                  </p>
                 </>
               ) : (
                 <>
                   <h2>{note.title}</h2>
-                  <div style={{ marginBottom: '10px', marginLeft:'10px', marginRight:'10px', textAlign:'left' }}><p>{note.text}</p></div>
+                  <div
+                    style={{
+                      marginBottom: "10px",
+                      marginLeft: "10px",
+                      marginRight: "10px",
+                      textAlign: "left",
+                    }}
+                  >
+                    <p>{note.text}</p>
+                  </div>
                 </>
               )}
 
               {editingNote && editingNote.id === note.id ? (
                 <>
-                  <div className='note-button'>
-                    <button className='iconButton'  onClick={() => updateNote(note.id)} >
-                      <MdOutlineSaveAlt/>
+                  <div className="note-button">
+                    <button
+                      className="iconButton"
+                      onClick={() => updateNote(note.id)}
+                    >
+                      <MdOutlineSaveAlt />
                     </button>
-                    <button className='iconButton' onClick={cancelEditing} >
-                      <MdOutlineEditOff/>
+                    <button className="iconButton" onClick={cancelEditing}>
+                      <MdOutlineEditOff />
                     </button>
                   </div>
                 </>
               ) : (
                 <>
-                  <div className='note-button'>
-                    <button className='iconButton' onClick={() => startEditing(note)} >
-                      <MdOutlineEdit/>
+                  <div className="note-button">
+                    <button
+                      className="iconButton"
+                      onClick={() => startEditing(note)}
+                    >
+                      <MdOutlineEdit />
                     </button>
-                    <button className='iconButton' onClick={() => deleteNote(note.id)} >
-                      <MdDelete/>
+                    <button
+                      className="iconButton"
+                      onClick={() => deleteNote(note.id)}
+                    >
+                      <MdDelete />
                     </button>
                   </div>
                 </>
@@ -159,7 +182,7 @@ export default function NoteMaker() {
           ))}
         </div>
       ) : (
-        <p style={{ fontWeight: 'bold', fontSize: '2rem' }}>
+        <p style={{ fontWeight: "bold", fontSize: "2rem" }}>
           Hey there's no notes yet! Give it a shot!
         </p>
       )}

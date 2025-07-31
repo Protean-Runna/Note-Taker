@@ -1,4 +1,4 @@
-import NoteMaker from './components/Notes';
+import NoteTracker from './components/Notes';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import { useState } from 'react';
@@ -9,7 +9,7 @@ function App() {
     <>
       <div>
       <Header handleDarkModeToggle={setDarkmode} />
-      <NoteMaker/>
+      <NoteTracker/>
       <Footer/>
       </div>
       

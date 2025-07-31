@@ -1,4 +1,4 @@
-import NoteTracker from './components/Notes';
+import NoteTracker from './components/NoteTracker';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import { useState } from 'react';

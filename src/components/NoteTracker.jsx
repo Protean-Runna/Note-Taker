@@ -6,6 +6,10 @@ import {
   MdOutlineSaveAlt,
 } from "react-icons/md";
 import NoteMaker from "./NoteMaker";
+import NoteCard from "./NoteCard";
+import NoteEditor from "./NoteEditor";
+
+
 
 export default function NoteTracker() {
   const [notes, setNotes] = useState(() => {
@@ -87,55 +91,21 @@ export default function NoteTracker() {
         noteCreateStyle={noteCreateStyle}
         addButtonStyle={addButtonStyle}
         addNote={addNote}
-       />
+      />
 
       {notes.length > 0 ? (
         <div style={gridStyle}>
           {notes.map((note) => (
             <div className="noteCardStyle" key={note.id}>
               {editingNote && editingNote.id === note.id ? (
-                <>
-                  <input
-                    type="text"
-                    value={editingNote.title}
-                    onChange={(e) =>
-                      setEditingNote((prev) => ({
-                        ...prev,
-                        title: e.target.value,
-                      }))
-                    }
-                    maxLength={NoteTitleLimit}
-                    placeholder="Edit title..."
-                  />
-                  <textarea
-                    value={editingNote.text}
-                    onChange={(e) =>
-                      setEditingNote((prev) => ({
-                        ...prev,
-                        text: e.target.value,
-                      }))
-                    }
-                    maxLength={NoteCharLimit}
-                    placeholder="Edit your content..."
-                  />
-                  <p>
-                    Characters left: {NoteCharLimit - editingNote.text.length}
-                  </p>
-                </>
+                <NoteEditor
+                  editingNote={editingNote}
+                  setEditingNote={setEditingNote}
+                  EditCharLimit={NoteCharLimit}
+                  EditTitleLimit={NoteTitleLimit}
+                ></NoteEditor>
               ) : (
-                <>
-                  <h2>{note.title}</h2>
-                  <div
-                    style={{
-                      marginBottom: "10px",
-                      marginLeft: "10px",
-                      marginRight: "10px",
-                      textAlign: "left",
-                    }}
-                  >
-                    <p>{note.text}</p>
-                  </div>
-                </>
+                <NoteCard title={note.title} content={note.text} />
               )}
 
               {editingNote && editingNote.id === note.id ? (

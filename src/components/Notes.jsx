@@ -82,8 +82,8 @@ export default function NoteTracker() {
         setNewTitle={setNewTitle}
         newNote={newNote}
         setNewNote={setNewNote}
-        NoteCharLimit={NoteCharLimit}
-        NoteTitleLimit={NoteTitleLimit}
+        CharLimit={NoteCharLimit}
+        TitleLimit={NoteTitleLimit}
         noteCreateStyle={noteCreateStyle}
         addButtonStyle={addButtonStyle}
         addNote={addNote}

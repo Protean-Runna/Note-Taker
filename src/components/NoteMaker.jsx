@@ -7,17 +7,17 @@ export default function NoteMaker(props) {
         type="text"
         placeholder="Title..."
         value={props.newTitle}
-        maxLength={props.NoteTitleLimit}
+        maxLength={props.TitleLimit}
         onChange={(e) => props.setNewTitle(e.target.value)}
       />
       <textarea
         placeholder="Type your note content here..."
         value={props.newNote}
         rows={3}
-        maxLength={props.NoteCharLimit}
+        maxLength={props.CharLimit}
         onChange={(e) => props.setNewNote(e.target.value)}
       />
-      <p>Characters left: {props.NoteCharLimit - props.newNote.length}</p>
+      <p>Characters left: {props.CharLimit - props.newNote.length}</p>
       <button onClick={props.addNote} style={props.addButtonStyle}>
         Add Note
       </button>

@@ -5,8 +5,9 @@ import {
   MdOutlineEditOff,
   MdOutlineSaveAlt,
 } from "react-icons/md";
+import NoteMaker from "./NoteMaker";
 
-export default function NoteMaker() {
+export default function NoteTracker() {
   const [notes, setNotes] = useState(() => {
     const storedNotes = localStorage.getItem("react-notes-app-data");
     return storedNotes ? JSON.parse(storedNotes) : [];
@@ -76,26 +77,17 @@ export default function NoteMaker() {
 
   return (
     <div style={containerStyle}>
-      <div className="note-create" style={noteCreateStyle}>
-        <input
-          type="text"
-          placeholder="Title..."
-          value={newTitle}
-          maxLength={NoteTitleLimit}
-          onChange={(e) => setNewTitle(e.target.value)}
-        />
-        <textarea
-          placeholder="Type your note content here..."
-          value={newNote}
-          rows={3}
-          maxLength={NoteCharLimit}
-          onChange={(e) => setNewNote(e.target.value)}
-        />
-        <p>Characters left: {NoteCharLimit - newNote.length}</p>
-        <button onClick={addNote} style={addButtonStyle}>
-          Add Note
-        </button>
-      </div>
+      <NoteMaker
+        newTitle={newTitle}
+        setNewTitle={setNewTitle}
+        newNote={newNote}
+        setNewNote={setNewNote}
+        NoteCharLimit={NoteCharLimit}
+        NoteTitleLimit={NoteTitleLimit}
+        noteCreateStyle={noteCreateStyle}
+        addButtonStyle={addButtonStyle}
+        addNote={addNote}
+       />
 
       {notes.length > 0 ? (
         <div style={gridStyle}>

@@ -1,3 +1,5 @@
+
+// This somehow works for now...
 export default function NoteMaker(props) {
   return (
     <div className="note-create" style={props.noteCreateStyle}>

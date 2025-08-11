@@ -42,7 +42,6 @@ export default function NoteTracker() {
   const addButtonStyle = {
     marginLeft: "10px",
     marginTop: "10px",
-    padding: "15px",
     fontSize: "20px",
   };
 

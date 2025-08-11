@@ -5,11 +5,8 @@ import {
   MdOutlineEditOff,
   MdOutlineSaveAlt,
 } from "react-icons/md";
-import NoteMaker from "./NoteMaker";
+import { NoteMaker, NoteEditor } from "./NoteMaker";
 import NoteCard from "./NoteCard";
-import NoteEditor from "./NoteEditor";
-
-
 
 export default function NoteTracker() {
   const [notes, setNotes] = useState(() => {
@@ -42,7 +39,12 @@ export default function NoteTracker() {
     gridTemplateColumns: "repeat(auto-fit, minmax(min(350px,100%), 1fr)) ",
     gap: "1rem",
   };
-  const addButtonStyle = { marginLeft: "10px", marginTop: "10px" };
+  const addButtonStyle = {
+    marginLeft: "10px",
+    marginTop: "10px",
+    padding: "15px",
+    fontSize: "20px",
+  };
 
   // Adds a new note if there's content
   const addNote = () => {
@@ -103,7 +105,7 @@ export default function NoteTracker() {
                   setEditingNote={setEditingNote}
                   EditCharLimit={NoteCharLimit}
                   EditTitleLimit={NoteTitleLimit}
-                ></NoteEditor>
+                />
               ) : (
                 <NoteCard title={note.title} content={note.text} />
               )}

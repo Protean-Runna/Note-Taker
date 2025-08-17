@@ -13,7 +13,7 @@ export default function NoteTracker() {
   const [newNote, setNewNote] = useState("");
   const [editingNote, setEditingNote] = useState(null);
   const NoteCharLimit = 260;
-  const NoteTitleLimit = 60;
+  const NoteTitleLimit = 30;
 
   // Persist notes to localStorage whenever they change
   useEffect(() => {

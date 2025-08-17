@@ -1,12 +1,7 @@
 import React, { useState, useEffect } from "react";
-import {
-  MdDelete,
-  MdOutlineEdit,
-  MdOutlineEditOff,
-  MdOutlineSaveAlt,
-} from "react-icons/md";
 import { NoteMaker, NoteEditor } from "./NoteMaker";
 import NoteCard from "./NoteCard";
+import { EditButtons, ButtonsOriginalState } from "./buttons";
 
 export default function NoteTracker() {
   const [notes, setNotes] = useState(() => {
@@ -111,34 +106,19 @@ export default function NoteTracker() {
 
               {editingNote && editingNote.id === note.id ? (
                 <>
-                  <div className="note-button">
-                    <button
-                      className="iconButton"
-                      onClick={() => updateNote(note.id)}
-                    >
-                      <MdOutlineSaveAlt />
-                    </button>
-                    <button className="iconButton" onClick={cancelEditing}>
-                      <MdOutlineEditOff />
-                    </button>
-                  </div>
+                  <EditButtons
+                    onClickSave={updateNote}
+                    onClickCancel={cancelEditing}
+                    id={note.id}
+                  ></EditButtons>
                 </>
               ) : (
                 <>
-                  <div className="note-button">
-                    <button
-                      className="iconButton"
-                      onClick={() => startEditing(note)}
-                    >
-                      <MdOutlineEdit />
-                    </button>
-                    <button
-                      className="iconButton"
-                      onClick={() => deleteNote(note.id)}
-                    >
-                      <MdDelete />
-                    </button>
-                  </div>
+                  <ButtonsOriginalState
+                    onClickDelete={deleteNote}
+                    onClickEdit={startEditing}
+                    note={note}
+                  ></ButtonsOriginalState>
                 </>
               )}
             </div>

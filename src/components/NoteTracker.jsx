@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { NoteMaker, NoteEditor } from "./NoteMaker";
 import NoteCard from "./NoteCard";
-import { EditButtons, ButtonsOriginalState } from "./Buttons";
+import { EditButtons, ButtonsOriginalState } from "./buttons";
 
 export default function NoteTracker() {
   const [notes, setNotes] = useState(() => {

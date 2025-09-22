@@ -16,6 +16,7 @@
   text-align: center;
   color-scheme: light dark;
   background-color: light-dark(white, rgb(19, 18, 20));
+  white-space: normal;
 }
 
 .note-create {

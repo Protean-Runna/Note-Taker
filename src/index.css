@@ -16,14 +16,15 @@
   text-align: center;
   color-scheme: light dark;
   background-color: light-dark(white, rgb(19, 18, 20));
-  white-space: normal;
+  
 }
 
 .note-create {
   position: relative;
 
   background-color: light-dark(rgb(228, 228, 228), rgb(10, 9, 10));
-  width: 500px;
+  width: 38%;
+  min-width: 400px;
   margin: 30px auto 20px auto;
   padding: 20px;
   border: 1.5px solid light-dark(rgb(228, 228, 228), white);

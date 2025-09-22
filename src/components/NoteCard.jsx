@@ -1,6 +1,7 @@
 export default function NoteCard(props) {
   return (
     <>
+    <div style={{overflowWrap:"break-word"}}>
       <h2>{props.title}</h2>
       <div
         style={{
@@ -12,6 +13,7 @@ export default function NoteCard(props) {
       >
         <p>{props.content}</p>
       </div>
+    </div>
     </>
   );
 }

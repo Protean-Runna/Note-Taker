@@ -46,10 +46,15 @@ export default function NoteTracker() {
 
   /* 28/09/2025
   UniqueID would help prevent the duplicate problem.
+  ...Turns
   */
   const generateUniqueID = () =>{
-    return Math.floor(Date.now() * Math.random()).toString(36)
-  }
+
+    const timeStamp = Date.now().toString(32); 
+    const random = Math.random().toString(32).slice(2, 6); 
+    return timeStamp + random; 
+
+  };
 
   // Adds a new note if there's content
   const addNote = () => {

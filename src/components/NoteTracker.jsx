@@ -9,6 +9,8 @@ export default function NoteTracker() {
     return storedNotes ? JSON.parse(storedNotes) : [];
   });
 
+
+
   const [newTitle, setNewTitle] = useState("");
   const [newNote, setNewNote] = useState("");
   const [editingNote, setEditingNote] = useState(null);
@@ -40,11 +42,20 @@ export default function NoteTracker() {
     fontSize: "20px",
   };
 
+  // Functions are below
+
+  /* 28/09/2025
+  UniqueID would help prevent the duplicate problem.
+  */
+  const generateUniqueID = () =>{
+    return Math.floor(Date.now() * Math.random()).toString(36)
+  }
+
   // Adds a new note if there's content
   const addNote = () => {
     if (newNote.trim()) {
       const note = {
-        id: notes.length ? notes[notes.length - 1].id + 1 : 1,
+        id: generateUniqueID(),
         title: newTitle,
         text: newNote,
       };

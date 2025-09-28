@@ -24,7 +24,7 @@
 
   background-color: light-dark(rgb(228, 228, 228), rgb(10, 9, 10));
   width: 38%;
-  min-width: 400px;
+  min-width: 350px;
   margin: 30px auto 20px auto;
   padding: 20px;
   border: 1.5px solid light-dark(rgb(228, 228, 228), white);

@@ -46,12 +46,14 @@ export default function NoteTracker() {
 
   /* 28/09/2025
   UniqueID would help prevent the duplicate problem.
-  ...Turns
+  ...Turns out crypto.randomUUID() is a thing. Won't use it here though.
+  It could be useful if I want to turn this from
+  local storage-based to API-storage based. 
   */
   const generateUniqueID = () =>{
 
-    const timeStamp = Date.now().toString(32); 
-    const random = Math.random().toString(32).slice(2, 6); 
+    const timeStamp = Date.now().toString(36); 
+    const random = Math.random().toString(36).slice(2, 6); 
     return timeStamp + random; 
 
   };

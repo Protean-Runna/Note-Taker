@@ -1,9 +1,30 @@
-<h2>A simple Note Taker and Tracker</h2>
-<h3>Framework Used: React + Vite</h3>
-<br>
+## A simple Note Taker and Tracker
+
 What it says on the tin. This is a simple note taker app developed to practice with useState in React.js, as well also figuring out local storage using useEffect.
 
-<h2>Functions</h2>
-1.Notes can be created and can be stored locally in your browser.
-<br>
-2.Notes can be edited or deleted if desired.
+## Technologies
+
+  - `React`
+  - `Vite`
+
+## Functions
+  - Notes can be created and stored locally in your browser.
+  - Notes can be edited or deleted if desired.
+
+
+## The Process
+
+After learning React.js from a variety of sources, I wanted to create something without a tutorial to test my knowledge of CRUD actions and what I knew.
+In this case, it was just a simple CRUD note taker. The process was as follows:
+
+  - Set up the base structure with React and Vite
+  - Create the UI components and CRUD functions
+  - Implementing UI and functions in the main app
+  - Fine-tuning the CSS style for presentability
+
+## Running this project
+If you want to run this project(for some maddening reason), follow these steps:
+  1. Clone the repository.
+  2. Install dependencies with `npm install`
+  3. Run the development server: `npm run dev`
+  3. Open the local host port ( `http://localhost:YOURPORTHERE`) in the browser

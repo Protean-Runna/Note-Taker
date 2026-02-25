@@ -6,6 +6,7 @@ What it says on the tin. This is a simple note taker app developed to practice w
 
   - `React`
   - `Vite`
+  - `JavaScript`
 
 ## Functions
   - Notes can be created and stored locally in your browser.
@@ -27,4 +28,4 @@ If you want to run this project(for some maddening reason), follow these steps:
   1. Clone the repository.
   2. Install dependencies with `npm install`
   3. Run the development server: `npm run dev`
-  3. Open the local host port ( `http://localhost:YOURPORTHERE`) in the browser
+  3. Open the local host port ( `http://localhost:5173`) in the browser

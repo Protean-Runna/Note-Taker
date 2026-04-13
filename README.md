@@ -29,3 +29,10 @@ If you want to run this project(for some maddening reason), follow these steps:
   2. Install dependencies with `npm install`
   3. Run the development server: `npm run dev`
   3. Open the local host port ( `http://localhost:5173`) in the browser
+
+## 📺 Demo Video
+
+
+https://github.com/user-attachments/assets/4862d315-ead8-41a8-8fc5-db174a8fd8f8
+
+

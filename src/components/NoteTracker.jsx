@@ -33,7 +33,7 @@ export default function NoteTracker() {
   const noteCreateStyle = { marginBottom: "2rem" };
   const gridStyle = {
     display: "grid",
-    gridTemplateColumns: "repeat(auto-fit, minmax(min(350px,100%), 1fr)) ",
+    gridTemplateColumns: "repeat(auto-fit, minmax(min(550px,100%), 1fr)) ",
     gap: "1rem",
   };
   const addButtonStyle = {
